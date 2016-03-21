@@ -26,6 +26,7 @@ WORKDIR /opt/selenium
 
 USER 6001
 
+RUN chown seluser:root /opt/selenium
 RUN chmod -R u+w,g+w /opt/selenium
 
 CMD ["/opt/bin/entry_point.sh"]
