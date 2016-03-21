@@ -16,11 +16,9 @@ ENV GRID_BROWSER_TIMEOUT 0
 ENV GRID_MAX_SESSION 5
 ENV GRID_UNREGISTER_IF_STILL_DOWN_AFTER 30000
 
-VOLUME /opt/selenium
-
 COPY generate_config /opt/selenium/generate_config
 COPY entry_point.sh /opt/bin/entry_point.sh
-RUN chown -R 6001:root /opt/selenium
+RUN chown -R 6001:6001 /opt/selenium
 RUN chmod -R u+w,g+w /opt/selenium
 
 USER 6001
