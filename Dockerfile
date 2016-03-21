@@ -20,7 +20,7 @@ COPY generate_config /opt/selenium/generate_config
 COPY entry_point.sh /opt/bin/entry_point.sh
 RUN chown -R seluser:seluser /opt/selenium
 
-USER seluser
+USER 6001
 
 CMD ["/opt/bin/entry_point.sh"]
 
