@@ -16,13 +16,13 @@ ENV GRID_BROWSER_TIMEOUT 0
 ENV GRID_MAX_SESSION 5
 ENV GRID_UNREGISTER_IF_STILL_DOWN_AFTER 30000
 
-COPY generate_config /opt/selenium/generate_config
-COPY entry_point.sh /opt/bin/entry_point.sh
-
-RUN adduser --disabled-password --uid 6001 --gid 0 --gecos "Selenium User" seluser
+RUN useradd -u 6001 seluser 
 
 VOLUME /opt/selenium
 WORKDIR /opt/selenium
+
+COPY generate_config /opt/selenium/generate_config
+COPY entry_point.sh /opt/bin/entry_point.sh
 
 USER 6001
 
